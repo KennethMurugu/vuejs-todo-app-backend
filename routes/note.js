@@ -16,7 +16,14 @@ router.get('/test', function (req, res) {
     .get('/get', NoteController.getSingleNote)
 
     //Get all notes
-    .get('/get/all', NoteController.getAllNotes);
+    .get('/get/all', NoteController.getAllNotes)
+
+    //Update note details
+    .post('/update', NoteController.updateSingleNote)
+
+    //Delete single note
+    .post('/delete', NoteController.deleteSingleNote)
+
 
 
 module.exports = router

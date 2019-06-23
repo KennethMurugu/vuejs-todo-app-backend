@@ -4,7 +4,8 @@ var User = require('./models/user')
 let devDbUrl = 'mongodb://localhost:27017/VueTrainingBackend'
 mongoose.connect(devDbUrl, {
     useNewUrlParser: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useFindAndModify: false
 }, function (err) {
     if (err) throw err
     console.log("Connected to Database:VueTrainingBackend successfully")
@@ -40,7 +41,7 @@ app.get('/test', function (req, res) {
     res.send("MAIN TEST URL")
 })
 
-let ip = '192.168.43.63',
+let ip = '127.0.0.1',
     port = 1234
 app.listen(port, port, function () {
     console.log('VueTrainingBackend Server is up and running on ' + ip + ":" + port);
